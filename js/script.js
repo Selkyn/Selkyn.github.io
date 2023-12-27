@@ -27,6 +27,7 @@ function generateLetter() {
         letters.innerText = letter;
         containerLetter.appendChild(letters);
         letters.addEventListener('click', function () {
+            restart.style.visibility = "hidden"
             if (!gameOver) {
                 let correctLetter = false;
                 for (let y = 0; y < randomWord.length; y++) {
@@ -38,7 +39,9 @@ function generateLetter() {
                         letters.style.visibility = "hidden";
                         correctLetter = true;
                         if (winArray.length === letterRandomWord.length) {
+                            containerLetter.style.visibility = "hidden";
                             statutFault.innerText = "Bravo !!!"
+                            restart.style.visibility = "visible"
                             restart.innerText = "Recommencer"
                             gaugWin++;
                             winScore.innerText = gaugWin;
@@ -54,6 +57,8 @@ function generateLetter() {
 
                         statutFault.innerText = "Il te reste " + (9 - malus) + " essai(s)";
                     } else if (malus === 9) {
+                        containerLetter.style.visibility = "hidden"
+                        restart.style.visibility = "visible"
                         statutFault.innerText = "Pendu !!!"
                         restart.innerHTML = "Recommencer"
                         gauglose++;
@@ -125,6 +130,7 @@ async function getRandomWord() { // Async pour faire une fonction asynchrone, ç
 
 //fonction pour restart le jeu
 async function restartGame() {
+    containerLetter.style.visibility = "visible";
     gameOver = false;
     restart.innerText = "Changer de mot"
     statutFault.innerText = "Il te reste 9 essais";
