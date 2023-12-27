@@ -57,7 +57,8 @@ function generateLetter() {
                     } else if (malus === 9) {
                         containerLetter.style.display = "none"
                         restart.style.display = "block"
-                        statutFault.innerText = "Pendu !!!"
+                        const stringRandomWord = randomWord.join("");
+                        statutFault.innerText = "Pendu !!! Le mot était : " + stringRandomWord +"."
                         gauglose++;
                         loseScore.innerText = gauglose;
                         gameOver = true;
