@@ -119,7 +119,7 @@ async function getRandomWord() { // Async pour faire une fonction asynchrone, ç
     randomWord = await getRandomWord();
     generateLetter();
     randomWordFunction();
-    console.log(randomWord);
+    // console.log(randomWord);
 })();
 
 
