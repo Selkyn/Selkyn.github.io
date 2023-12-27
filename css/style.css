@@ -107,6 +107,7 @@ h1 {
     padding: 10px;
     background-color: #ae6118;
     border-radius: 20px;
+    display: none;
 }
 
 #restart:hover {
