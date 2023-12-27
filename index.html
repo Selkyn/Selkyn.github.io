@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jeu du Pendu</title>
+</head>
+
+<body>
+    <header>
+        <h1>Le jeu du Pendu</h1>
+    </header>
+    <main>
+
+        <section id="section-random-letter">
+            <div id="container-random-letter"></div>
+            <p id="statut-fault">Il te reste 9 essais</p>
+            <button id="restart">Changer de mot</button>
+            <!-- <input type="button" onclick='window.location.reload(false)' value="Changer de mot" id="restart"/> -->
+            <div id="scoring">
+                <p id="gaug-win-scoring">Victoire : <span id="win-score">0</span></p>
+                <div id="vertical-line"></div>
+                <p id="gaug-lose-scoring">Défaite : <span id="lose-score">0</span></p>
+            </div>
+        </section>
+
+        <section id="section-letter">
+            <div id="container-letter"></div>
+        </section>
+
+        <section id="draw">
+            <div id="div-img">
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
