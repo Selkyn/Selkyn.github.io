@@ -270,11 +270,18 @@ function kamea() {
         kameaTir.id = "kamea-tir";
         kameaTir.src = "images/tirkamea.png";
         kameaTir.style.opacity = "0";
+        const aura = document.createElement("img");
+        aura.id = "aura";
+        aura.src = "images/aura.gif";
+        aura.style.opacity = "0";
+        animationsSection.appendChild(aura);
        animationsSection.appendChild(kameaTir);
         animationsSection.appendChild(kameaBall);
         setTimeout(() => {
             kameaBall.style.transition = "opacity 3s ease";
             kameaBall.style.opacity = "1";
+            aura.style.transition = "opacity 1s ease"
+            aura.style.opacity = "1";
         }, 300);
         setTimeout(() => {
             kameaBall.style.transform = "translateX(100%)";
@@ -287,6 +294,8 @@ function kamea() {
             kameaTir.style.opacity = "0";
             kameaBall.style.transition = "opacity 3s ease"
             kameaBall.style.opacity = "0";
+            aura.style.transition = "opacity 4s ease"
+            aura.style.opacity = "0";
         }, 5500);
         
         

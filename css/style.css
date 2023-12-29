@@ -217,3 +217,11 @@ button {
     left: 480px;
     top: 230px;
 }
+
+#aura {
+    position: absolute;
+    z-index: 1;
+    width: 600px;
+    left: 170px;
+    top: 150px;
+}
