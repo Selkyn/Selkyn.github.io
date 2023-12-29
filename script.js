@@ -40,7 +40,7 @@ const goldSound = document.getElementById("gold-sound");
 const welcomeStranger = document.getElementById("welcome-stranger");
 const fireball = document.getElementById("fireball");
 const dragonRoar = document.getElementById("dragon-roar");
-
+const kameaSound = document.getElementById("kamea-sound");
 
 //variable qui va determiner mes monstres
 const monsters = [
@@ -253,6 +253,48 @@ function fightDragon() {
     dragonRoom.style.backgroundImage = "url(images/volcan1.webp)";
     goFight();
 }
+
+function kamea() {
+    const kamehameha = document.createElement("button");
+    kamehameha.innerText = "Kamehameha";
+    kamehameha.id = "kamehameha";
+    kamehameha.style.display = "block";
+    animationsSection.appendChild(kamehameha);
+    kamehameha.addEventListener('click', function(){
+        kameaSound.src = "media/kamea.mp3";
+        const kameaBall = document.createElement("img");
+        kameaBall.id = "kamea-ball";
+        kameaBall.src = "images/boulekamea.webp";
+        kameaBall.style.opacity = "0";
+        const kameaTir = document.createElement("img");
+        kameaTir.id = "kamea-tir";
+        kameaTir.src = "images/tirkamea.png";
+        kameaTir.style.opacity = "0";
+       animationsSection.appendChild(kameaTir);
+        animationsSection.appendChild(kameaBall);
+        setTimeout(() => {
+            kameaBall.style.transition = "opacity 3s ease";
+            kameaBall.style.opacity = "1";
+        }, 300);
+        setTimeout(() => {
+            kameaBall.style.transform = "translateX(100%)";
+            kameaBall.style.transition = "transform .2s ease"
+            kameaTir.style.transition = "opacity .2s ease"
+            kameaTir.style.opacity = ".8";
+        }, 3000);
+        setTimeout(() => {
+            kameaTir.style.transition = "opacity 3s ease"
+            kameaTir.style.opacity = "0";
+            kameaBall.style.transition = "opacity 3s ease"
+            kameaBall.style.opacity = "0";
+        }, 5500);
+        
+        
+
+    });
+}
+kamea();
+
 
 function buyHealth() { // fonction pour acheter de la vie.
     if(gold >= 10) { // si j'ai 1à golds ou + alors je peux acheter de la vie
