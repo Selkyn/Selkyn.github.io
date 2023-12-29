@@ -1,136 +1,197 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    background-color: black;
-    font-family: 'Kanit', sans-serif;
+    background-color: #0a0a23;
 }
+
 main {
-    margin: auto;
-    border-radius: 8px;
-    width: 1000px;
-    height: 500px;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "empty draw"
-                        "letter draw";
-    overflow: hidden;
-}
-
-h1 {
-    text-align: center;
-    margin: 25px;
-    color: #ae6118;
-}
-#section-empty-letter {
-    grid-area: empty;
-    width: 100%;
-    
-}
-
-#section-random-letter {
-    display: grid;
-    place-items: center;
-    background-color: #f3f3b7
-}
-#section-letter {
-    grid-area: letter;
-    width: 100%;
-    display: grid;
-    place-items: center;
-    background-color: #f3f3b7
-}
-
-#draw {
-    grid-area: draw;
-    width: 100%;
-}
-
-
-#container-letter {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px;
-}
-.letters {
-    width: 50px;
-    height: 50px;
-    background-color: #ae6118;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-}
-
-.letters:hover {
-    cursor: pointer;
-    background-color: #582900;
-}
-#container-random-letter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
-
-.letter-random-word {
-    width: 25px;
-    height: 25px;
-    /* background-color: blueviolet; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* color : blueviolet; */
-    font-size: 30px;
-}
-
-#statut-fault {
-    text-align: center;
-}
-
-#div-img {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/pendu_0.jpg);
-    background-size: cover;
-}
-
-#restart {
+#text {
+    background-color: #0a0a23;
+    color: #ffffff;
     padding: 10px;
-    background-color: #ae6118;
-    border-radius: 20px;
+}
+
+#game {
+    max-width: 500px;
+    max-height: 400px;
+    background-color: #ffffff;
+    color: #ffffff;
+    margin: 30px auto 0px;
+    padding: 10px;
+}
+
+#controls, #stats {
+    border: 1px solid #0a0a23;
+    color: #0a0a23;
+    padding: 5px;
+}
+
+#monsterStats {
+    border: 1px solid #0a0a23;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #c70d0d;
     display: none;
 }
 
-#restart:hover {
+.stat {
+    padding-right: 10px;
+}
+
+button {
     cursor: pointer;
+    color: #0a0a23;
+    background-color: #feac32;
+    background-image: linear-gradient(#fecc4c, #ffac33);
+    border: 3px solid #feac32;
 }
 
-#scoring {
-    display: flex;
-    gap: 20px;
+#animations {
+    width: 1200px;
+    height: 650px;
+    color: aliceblue;
+    border: 2px solid white;
+    position: relative;
+    
 }
 
-#win-score {
-    color: blue;
-}
-
-#lose-score {
-    color: red;
-}
-
-#vertical-line {
-    width: 3px;
-    height: 20px;
-    margin: auto;
-    background-color: #ae6118;
+#town {
+    background-image: url(../images/village.webp); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
     display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#store {
+    background-image: url(../images/store.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#cave {
+    background-image: url(../images/cave.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+}
+#seller {
+    width: 220px;
+    position: absolute;
+    right: 130px;
+    bottom: 5px;
+}
+
+#items {
+    position: absolute;
+    z-index: 6;
+    width: 80px;
+    left: 420px;
+    top: 250px;
+    /* transition: all;
+    transform: translateY(-25%); */
+}
+
+/* #knight-store {
+    position: absolute;
+    width:  300px;
+    left: 500px;
+    top: 300px;
+} */
+
+#img-test {
+    position: absolute;
+    z-index: 5;
+    width: 300px;
+    left: 300px;
+    top: 280px;
+}
+
+#monster-img {
+    position: absolute;
+    z-index: 5;
+    width: 280px;
+    right: 150px;
+    top: 280px;
+}
+
+#dragon-room {
+    background-image: url(../images/volcan1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: hidden;
+}
+
+#dragon-img {
+    width: 650px;
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    
+}
+
+#blood {
+    position: absolute;
+    z-index: 4;
+    width: 320px;
+    left: 320px;
+    top: 400px;
+    display: none;
+}
+
+#damage-on-monster {
+    color: yellow;
+    position: absolute;
+    z-index: 6;
+    right: 300px;
+    top: 200px;
+    font-size: 40px;
+}
+
+#damage-of-monster {
+    color: red;
+    position: absolute;
+    z-index: 6;
+    left: 450px;
+    top: 200px;
+    font-size: 40px;
+}
+
+#you-die {
+    width: 500px;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    z-index: 7;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#fireball {
+    width: 300px;
+    position: absolute;
+    z-index: 8;
+    right: 370px;
+    top: 150px;
+    opacity: 0;
+    /* display: none; */
 }
